@@ -1,6 +1,6 @@
 
-    var WIDTH=window.innerWidth;
-    var HEIGHT=window.innerHeight;
+    var WIDTH=Math.max(1,window.innerWidth);
+    var HEIGHT=Math.max(1,window.innerHeight);
     var canvas;
     var firstCanvas;
     var firstContext; 
@@ -9,7 +9,7 @@
     var con;// con is first Canvas con for legacy reasons
     var g;
     var pxs = new Array();
-    var rint = 5;
+    var rint = 10;
 
     
 $(document).ready(function(){
@@ -23,11 +23,10 @@ $(document).ready(function(){
     bufferContext = firstCanvas.getContext('2d');
 
     //render the buffered canvas onto the original canvas element
-
-    for(var i = 0; i < 100; i++) {
-        pxs[i] = new Circle();
-        pxs[i].reset();
-    }
+        for(var i = 0; i < 100; i++) {
+            pxs[i] = new Circle();
+            pxs[i].reset();
+        }
     //setInterval(draw,rint);
     draw();
 
@@ -38,6 +37,8 @@ function draw() {
     setTimeout(function(){
         window.requestAnimationFrame(draw);
         bufferContext.clearRect(0,0,WIDTH,HEIGHT);
+
+
 
         for(var i = 0; i < pxs.length; i++) {
             pxs[i].fade();
@@ -78,7 +79,7 @@ function Circle() {
         bufferContext.beginPath();
         bufferContext.arc(this.x,this.y,this.r,0,Math.PI*2,true);
         bufferContext.closePath();
-        g = bufferContext.createRadialGradient(this.x,this.y,0,this.x,this.y,this.r*new_opacity);
+        g = bufferContext.createRadialGradient(Math.abs(this.x),Math.abs(this.y),0,Math.abs(this.x),Math.abs(this.y),Math.abs(this.r*new_opacity));
         g.addColorStop(0.0, 'rgba(255,255,255,'+new_opacity+')');
         g.addColorStop(this.stop, 'rgba(77,101,181,'+(new_opacity*.6)+')');
         g.addColorStop(1.0, 'rgba(77,101,181,0)');
@@ -87,9 +88,10 @@ function Circle() {
     }
 
     this.move = function() {
-        this.x += (this.rt/this.hl)*this.dx;
-        this.y += (this.rt/this.hl)*this.dy;
-        if(this.x > WIDTH || this.x < 0) this.dx *= -1;
+        this.x += Math.abs((this.rt/this.hl)*this.dx);
+
+        this.y +=0;// (this.rt/this.hl)*this.dy;
+        if(this.x > WIDTH || this.x < 0) this.x = 1;
         if(this.y > HEIGHT || this.y < 0) this.dy *= -1;
     }
 }
