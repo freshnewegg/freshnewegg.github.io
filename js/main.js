@@ -14,13 +14,7 @@
     
 $(document).ready(function(){
 
-    canvas = document.getElementById('pixie'); //790
-    con=canvas.getContext('2d');
-    // buffer canvas
-    firstCanvas = document.createElement('canvas');
-    firstCanvas.width = window.innerWidth;
-    firstCanvas.height = window.innerHeight;
-    bufferContext = firstCanvas.getContext('2d');
+    canvassetup();
 
     //render the buffered canvas onto the original canvas element
         for(var i = 0; i < 100; i++) {
@@ -33,8 +27,23 @@ $(document).ready(function(){
     
 });
 
+function canvassetup(){
+
+    // resizing will no longer screw up the stars
+    WIDTH=Math.max(1,window.innerWidth);
+    HEIGHT=Math.max(1,window.innerHeight);
+    canvas = document.getElementById('pixie'); //790
+    con=canvas.getContext('2d');
+    // buffer canvas
+    firstCanvas = document.createElement('canvas');
+    firstCanvas.width = window.innerWidth;
+    firstCanvas.height = window.innerHeight;
+    bufferContext = firstCanvas.getContext('2d');
+}
+
 function draw() {
     setTimeout(function(){
+
         window.requestAnimationFrame(draw);
         bufferContext.clearRect(0,0,WIDTH,HEIGHT);
 
@@ -49,12 +58,15 @@ function draw() {
         con.drawImage(firstCanvas, 0, 0);
     }, rint);
 }  
-draw();
+//draw();
 
 function Circle() {
     this.settings = {time_to_live:500, x_maxspeed:5, y_maxspeed:2, radius_max:10, rt:1, x_origin:960, y_origin:540, random:true, blink:true};
 
+
+    // this generates each individual bubble
     this.reset = function() {
+
         this.x = (this.settings.random ? WIDTH*Math.random() : this.settings.x_origin);
         this.y = (this.settings.random ? HEIGHT*Math.random() : this.settings.y_origin);
         this.r = ((this.settings.radius_max-1)*Math.random()) + 1;
@@ -72,6 +84,7 @@ function Circle() {
         this.rt += this.settings.rt;
     }
 
+    // this creates a path and illustrates the stars
     this.draw = function() {
         if(this.settings.blink && (this.rt <= 0 || this.rt >= this.hl)) this.settings.rt = this.settings.rt*-1;
         else if(this.rt >= this.hl) this.reset();
@@ -88,6 +101,7 @@ function Circle() {
     }
 
     this.move = function() {
+
         this.x += Math.abs((this.rt/this.hl)*this.dx);
 
         this.y +=0;// (this.rt/this.hl)*this.dy;

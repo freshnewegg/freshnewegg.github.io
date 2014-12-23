@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-
+    <script type="text/javascript" src="js/main.js"></script>
 
 
     <title>Edgar Wang</title>
@@ -23,10 +23,10 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body onresize="canvassetup()">
 
-      <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
+      <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
+        <div class="container">
           <div class="navbar-header">
 
           </div>
@@ -40,10 +40,11 @@
           </div>
         </div>
       </nav>
+
       <div class="heading">
 
       <h1 id="name">Edgar Wang</h1>
-      <h1>Aspiring Engineer, Toronto </h1>
+      <h1>Engineer, Entrepreneur, Writer </h1>
       </div>
 
 
@@ -64,10 +65,25 @@
       <br></br>
       <br></br>
 
+      <footer>
+          <div class="container">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+
+                  <span class="love">Made with Love
+                    <i class="fa fa-heart" style="color:red"></i>
+                  </span>
+                </div>
+                <div class="col-md-4"></div>            
+        </div>
+
+
+      </footer>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
+
   </body>
 </html>

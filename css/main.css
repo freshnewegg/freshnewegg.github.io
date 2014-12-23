@@ -6,6 +6,7 @@ waddup */
 * {
 	margin: 0;
 	padding: 0;
+
 }
 
 h1 {
@@ -17,6 +18,13 @@ h1 {
 	font-size: 2em;
 	color: rgb(255,255,255);
 
+}
+
+body{
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 14px;
+	line-height: 1.42857;
+	color: #333;
 }
 
 #name {
@@ -52,6 +60,24 @@ h1 {
     background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#040429), color-stop(100%,#257eb7));
 }
 
+
+footer {
+	padding: 25px 0px;
+	text-align: center;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 1em
+}
+span{
+	min-height: 18px;
+}
+
+footer span.love {
+	font-size: 20px;
+	font-weight: bold;
+    text-transform: none;
+    font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 40px;
+}
 /*canvas {
 	position: absolute;
 	border: 2px solid #000;
