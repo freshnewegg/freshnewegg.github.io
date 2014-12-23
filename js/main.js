@@ -35,22 +35,23 @@ $(document).ready(function(){
 });
 
 function draw() {
+    setTimeout(function(){
+        window.requestAnimationFrame(draw);
+        bufferContext.clearRect(0,0,WIDTH,HEIGHT);
 
-    window.requestAnimationFrame(draw);
-    bufferContext.clearRect(0,0,WIDTH,HEIGHT);
-
-    for(var i = 0; i < pxs.length; i++) {
-        pxs[i].fade();
-        pxs[i].move();
-        pxs[i].draw();
-    }
-    con.clearRect(0,0,WIDTH,HEIGHT);
-    con.drawImage(firstCanvas, 0, 0);
+        for(var i = 0; i < pxs.length; i++) {
+            pxs[i].fade();
+            pxs[i].move();
+            pxs[i].draw();
+        }
+        con.clearRect(0,0,WIDTH,HEIGHT);
+        con.drawImage(firstCanvas, 0, 0);
+    }, rint);
 }  
 draw();
 
 function Circle() {
-    this.settings = {time_to_live:8000, x_maxspeed:5, y_maxspeed:2, radius_max:10, rt:1, x_origin:960, y_origin:540, random:true, blink:true};
+    this.settings = {time_to_live:500, x_maxspeed:5, y_maxspeed:2, radius_max:10, rt:1, x_origin:960, y_origin:540, random:true, blink:true};
 
     this.reset = function() {
         this.x = (this.settings.random ? WIDTH*Math.random() : this.settings.x_origin);
@@ -58,7 +59,7 @@ function Circle() {
         this.r = ((this.settings.radius_max-1)*Math.random()) + 1;
         this.dx = (Math.random()*this.settings.x_maxspeed) * (Math.random() < .5 ? -1 : 1);
         this.dy = (Math.random()*this.settings.y_maxspeed) * (Math.random() < .5 ? -1 : 1);
-        this.hl = (this.settings.time_to_live/rint)*(this.r/this.settings.radius_max);
+        this.hl = (this.settings.time_to_live)*(this.r/this.settings.radius_max);
         this.rt = Math.random()*this.hl;
         this.settings.rt = Math.random()+1;
         this.stop = Math.random()*.2+.4;
