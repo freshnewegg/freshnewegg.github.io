@@ -1,6 +1,6 @@
 
-    var WIDTH;
-    var HEIGHT;
+    var WIDTH=window.innerWidth;
+    var HEIGHT=window.innerHeight;
     var canvas;
     var firstCanvas;
     var firstContext; 
@@ -9,29 +9,45 @@
     var con;// con is first Canvas con for legacy reasons
     var g;
     var pxs = new Array();
-    var rint = 60;
+    var rint = 5;
 
     
 $(document).ready(function(){
-    WIDTH = 1680;
-    HEIGHT = 1050;
-    canvas = document.getElementById('pixie');
-    con = canvas.getContext('2d');
+
+    canvas = document.getElementById('pixie'); //790
+    con=canvas.getContext('2d');
+    // buffer canvas
+    firstCanvas = document.createElement('canvas');
+    firstCanvas.width = window.innerWidth;
+    firstCanvas.height = window.innerHeight;
+    bufferContext = firstCanvas.getContext('2d');
+
+    //render the buffered canvas onto the original canvas element
+
     for(var i = 0; i < 100; i++) {
         pxs[i] = new Circle();
         pxs[i].reset();
     }
-    setInterval(draw,rint);
+    //setInterval(draw,rint);
+    draw();
+
+    
 });
+
 function draw() {
-    con.clearRect(0,0,WIDTH,HEIGHT);
+
+    window.requestAnimationFrame(draw);
+    bufferContext.clearRect(0,0,WIDTH,HEIGHT);
+
     for(var i = 0; i < pxs.length; i++) {
         pxs[i].fade();
         pxs[i].move();
         pxs[i].draw();
     }
+    con.clearRect(0,0,WIDTH,HEIGHT);
+    con.drawImage(firstCanvas, 0, 0);
 }  
-
+draw();
 
 function Circle() {
     this.settings = {time_to_live:8000, x_maxspeed:5, y_maxspeed:2, radius_max:10, rt:1, x_origin:960, y_origin:540, random:true, blink:true};
@@ -58,15 +74,15 @@ function Circle() {
         if(this.settings.blink && (this.rt <= 0 || this.rt >= this.hl)) this.settings.rt = this.settings.rt*-1;
         else if(this.rt >= this.hl) this.reset();
         var new_opacity = 1-(this.rt/this.hl);
-        con.beginPath();
-        con.arc(this.x,this.y,this.r,0,Math.PI*2,true);
-        con.closePath();
-        g = con.createRadialGradient(this.x,this.y,0,this.x,this.y,this.r*new_opacity);
+        bufferContext.beginPath();
+        bufferContext.arc(this.x,this.y,this.r,0,Math.PI*2,true);
+        bufferContext.closePath();
+        g = bufferContext.createRadialGradient(this.x,this.y,0,this.x,this.y,this.r*new_opacity);
         g.addColorStop(0.0, 'rgba(255,255,255,'+new_opacity+')');
         g.addColorStop(this.stop, 'rgba(77,101,181,'+(new_opacity*.6)+')');
         g.addColorStop(1.0, 'rgba(77,101,181,0)');
-        con.fillStyle = g;
-        con.fill();
+        bufferContext.fillStyle = g;
+        bufferContext.fill();
     }
 
     this.move = function() {
