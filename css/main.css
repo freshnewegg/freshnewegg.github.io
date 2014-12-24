@@ -67,16 +67,55 @@ footer {
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-size: 1em
 }
-span{
-	min-height: 18px;
+span {
+	min-height: 40px;
 }
 
-footer span.love {
-	font-size: 20px;
+span.love {
+	float: right;
+	font-size: 1em;
 	font-weight: bold;
     text-transform: none;
     font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
     line-height: 40px;
+    
+}
+
+
+
+ul.social-buttons {
+	font-size: 25px;
+	font-weight: bold;
+    list-style: outside none none;
+}
+
+ul.social-buttons li a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    font-size: 20px;
+    line-height: 40px;
+    outline: 0px none;
+    color: #FFF;
+    background-color: #222;
+    transition: all 0.3s ease 0s;
+}
+
+span.social-inline {
+	text-align: center;
+}
+
+.social-buttons> li {
+	display: inline-block;
+	padding-left: 5px;
+    padding-right: 5px;
+}
+
+
+ul.social-buttons li a:hover, a:focus, a:active {
+    outline: 0px none;
+    background-color: #0EBFE9;
 }
 /*canvas {
 	position: absolute;
