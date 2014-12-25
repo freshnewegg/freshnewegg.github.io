@@ -154,6 +154,7 @@ ul.social-buttons li a:hover, a:focus, a:active {
 
 }
 
+/*change the hover text color here*/ 
 #topnav a:hover, a:focus, a:active{
 	outline: 0px none;   
 	color: #0EBFE9;
@@ -163,15 +164,10 @@ ul.social-buttons li a:hover, a:focus, a:active {
  
 .navbar-default .navbar-nav li a:hover, 
 .navbar-default .navbar-nav li a:focus {
-    color: #0EBFE9;
+    color: #777;
 
 }
 
-.navbar-default .navbar-nav li a:hover, 
-.navbar-default .navbar-nav li a:focus {
-    color: #0EBFE9;
-
-}
 
 
 /*canvas {
