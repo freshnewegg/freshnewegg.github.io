@@ -107,6 +107,7 @@ span.love {
 
 
 ul.social-buttons {
+	padding: 5px 0px 0px 0px;
 	font-size: 25px;
 	font-weight: bold;
     list-style: outside none none;
