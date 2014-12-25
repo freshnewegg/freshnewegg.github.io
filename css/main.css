@@ -20,27 +20,47 @@ h1 {
 
 }
 
+h2 {
+	font-size: 2em;
+	color: #333;
+	font-family: inherit;
+	text-align: center; 
+}
+
 body{
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 400;
 	font-size: 14px;
 	line-height: 1.42857;
-	color: #333;
+	color: #666;
+	text-rendering: optimizelegibility;
+	-moz-osx-font-smoothing: grayscale;
+	font-feature-settings: "liga", "kern";
+
 }
+
 
 #name {
 	font-size: 4em;
 	color: #0EBFE9
 }
 
+#about {
+	width: 100%;
+	padding: 150px 0px;
+	color: 
+}
 
+.navbar-default {
+	background-color: rgb(255,255,255);
+	padding: 10px 0px 0px 0px;
+}
 .nav {
 
 	min-height: 52px;
-	background-color: rgb(255,250,250);
-
-
-
+	background-color: rgb(255,255,255);
 }
+
 .heading {
 	position: absolute;
 	top: 25%;
@@ -53,6 +73,8 @@ body{
     overflow:hidden;
     position:relative;
 }
+
+
 #pixie {
 
     z-index:0;
@@ -69,10 +91,11 @@ footer {
 }
 span {
 	min-height: 40px;
+
 }
 
 span.love {
-	float: right;
+	float: center;
 	font-size: 1em;
 	font-weight: bold;
     text-transform: none;
@@ -87,6 +110,7 @@ ul.social-buttons {
 	font-size: 25px;
 	font-weight: bold;
     list-style: outside none none;
+    float: right;
 }
 
 ul.social-buttons li a {
@@ -122,8 +146,11 @@ ul.social-buttons li a:hover, a:focus, a:active {
 
 /*change the hover colour of navbar here*/
 #topnav{
-	font-weight: bold;
+	font-weight: bolder;
+	font-size: 16px;
 	transition: all 0.3s ease 0s;
+
+
 }
 
 #topnav a:hover, a:focus, a:active{

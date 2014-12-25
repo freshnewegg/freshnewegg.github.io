@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/smoothscroll.js"></script>
 
 
     <title>Edgar Wang</title>
@@ -25,19 +26,40 @@
   </head>
   <body onresize="canvassetup()">
 
+      <!--navbar-->
       <nav class="navbar navbar-default navbar-fixed-top navbar-shrink hidden-xs">
         <div class="container">
           <div class="navbar-header">
 
           </div>
           <div>
-            <ul class="nav navbar-nav" id="topnav">
+            <ul class="nav navbar-nav col-md-8" id="topnav">
               <li ><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
+              <li><a href="#about">About</a></li>
               <li><a href="#">Projects</a></li>
-             <li><a href="#">Contact</a></li>
             </ul>
           </div>
+          <div class="col-md-4">
+            <span class= "social-inline">
+               <ul class= "social-buttons">
+                  <li>
+                    <a href="https://github.com/freshnewegg">
+                      <i class="fa fa-github"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.facebook.com/edgar.wang.12">
+                      <i class="fa fa-facebook"></i>
+                    </a>
+                   </li>
+                   <li>
+                     <a href="https://ca.linkedin.com/in/wangedgar">
+                         <i class="fa fa-linkedin"></i>
+                      </a>
+                    </li>
+                </ul>
+             </span>
+          </div>    
         </div>
       </nav>
 
@@ -49,11 +71,36 @@
 
 
     <!-- canvas needs to be resized here or dynamically by javascript-->
-    <div id="container" width="1440px" height="790px">      
-      <canvas id="pixie" width="1440px" height= "790px"></canvas>
+    <div id="container" width="1440px" height="795px">      
+      <canvas id="pixie" width="1440px" height= "795px"></canvas>
     </div>
 
 
+    <!--About section-->
+    <section id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2> ABOUT</h2>
+          <br> </br>
+          <div class="description">
+            <p>
+              Hey there! My name is Edgar Wang. I'm currently junior at the at the University of Toronto. I'm studying electrical engineering while learning computer science on the side.
+            </p>
+            <br></br>
+            <p>
+              I'm passionate about engineering, politics and law. I formerly interned with the Electrical Systems Group in the F&S at UofT. Im currently a Sci & Tech editor on The Cannon and am involved in Engineers without Borders.    
+            </p>
+            <br></br>
+         </div>
+
+        </div>
+      </div>
+
+
+    </div>
+    </section>
+
       <br></br>
       <br></br>
       <br></br>
@@ -65,45 +112,33 @@
       <br></br>
       <br></br>
 
+
+      <!--footer section-->
       <footer>
           <div class="container">
             <div class="row">
                 <div class="col-md-4"></div>
                 
 
-                <div class="col-md-4">
-                  <span class= "social-inline">
-                    <ul class= "social-buttons">
-                      <li>
-                          <a href="#">
-                              <i class="fa fa-twitter"></i>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="https://www.facebook.com/edgar.wang.12">
-                              <i class="fa fa-facebook"></i>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#">
-                              <i class="fa fa-linkedin"></i>
-                          </a>
-                      </li>
-                  </ul>
-                  </span>
-                </div>    
+    
+
                 <div class="col-md-4">
 
-                  <span class="love">Made with Love
-                    <i class="fa fa-heart" style="color:red"></i>
+                  <span class="love">Made with
+                    <a href="https://github.com/freshnewegg/freshnewegg.github.io">
+                      <i class="fa fa-heart" style="color:red"></i>
+                    </a>
                     by Edgar Wang
                   </span>
-                </div>        
+                </div>   
+                 <div class="col-md-4">
+                 
+                </div>     
 
         </div>
-
-
       </footer>
+
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
