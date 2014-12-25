@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
-    <script type="text/javascript" src="js/smoothscroll.js"></script>
+    <script type="text/javascript" src="js/smooth-scroll.js"></script>
 
 
     <title>Edgar Wang</title>
@@ -26,48 +26,50 @@
   </head>
   <body onresize="canvassetup()">
 
+    <section id="home">
       <!--navbar-->
-      <nav class="navbar navbar-default navbar-fixed-top navbar-shrink hidden-xs">
-        <div class="container">
-          <div class="navbar-header">
+      <nav class="navbar navbar-default navbar-fixed-top navbar-shrink hidden-xs">          
+          <div class="container">
+            <div class="navbar-header">
 
-          </div>
-          <div>
-            <ul class="nav navbar-nav col-md-8" id="topnav">
-              <li ><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#">Projects</a></li>
-            </ul>
-          </div>
-          <div class="col-md-4">
-            <span class= "social-inline">
-               <ul class= "social-buttons">
-                  <li>
-                    <a href="https://github.com/freshnewegg">
-                      <i class="fa fa-github"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://www.facebook.com/edgar.wang.12">
-                      <i class="fa fa-facebook"></i>
-                    </a>
-                   </li>
-                   <li>
-                     <a href="https://ca.linkedin.com/in/wangedgar">
-                         <i class="fa fa-linkedin"></i>
+            </div>
+            <div>
+              <ul class="nav navbar-nav col-md-8" id="topnav">
+                <li ><a data-scroll href="#home">Home</a></li>
+                <li><a data-scroll href="#about">About</a></li>
+                <li><a href="#">Projects</a></li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <span class= "social-inline">
+                 <ul class= "social-buttons">
+                    <li>
+                      <a href="https://github.com/freshnewegg">
+                        <i class="fa fa-github"></i>
                       </a>
                     </li>
-                </ul>
-             </span>
-          </div>    
-        </div>
-      </nav>
+                    <li>
+                      <a href="https://www.facebook.com/edgar.wang.12">
+                        <i class="fa fa-facebook"></i>
+                      </a>
+                     </li>
+                     <li>
+                       <a href="https://ca.linkedin.com/in/wangedgar">
+                           <i class="fa fa-linkedin"></i>
+                        </a>
+                      </li>
+                  </ul>
+               </span>
+            </div>    
+          </div>
+    </section>    
 
-      <div class="heading">
+    </nav>
+    <div class="heading">
 
-      <h1 id="name">Edgar Wang</h1>
-      <h1>Aspiring Engineer and Entrepreneur </h1>
-      </div>
+    <h1 id="name">Edgar Wang</h1>
+    <h1>Aspiring Engineer and Entrepreneur </h1>
+    </div>
 
 
     <!-- canvas needs to be resized here or dynamically by javascript-->
@@ -144,5 +146,9 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
 
+    <!--smooth scroll script-->
+    <script>
+        smoothScroll.init();
+    </script>
   </body>
 </html>
