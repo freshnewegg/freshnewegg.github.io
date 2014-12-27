@@ -1,5 +1,7 @@
 freshnewegg.github.io
 =====================
+
+edgarr.me 
  
 Welcome to my personal site!
 
