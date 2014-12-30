@@ -45,11 +45,14 @@ body{
 	color: #0EBFE9
 }
 
-#about {
+#about,#projects {
 	width: 100%;
+	height: 100vh;
 	padding: 150px 0px;
 	color: 
 }
+
+
 
 .navbar-default {
 	background-color: rgb(255,255,255);
@@ -78,7 +81,7 @@ body{
 #pixie {
 
     z-index:0;
-    background:-moz-linear-gradient(top, #261A1A,#352D2D) ;
+    background:-moz-linear-gradient(top, #0C090A,#2B1B17) ;
     background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#040429), color-stop(100%,#257eb7));
 }
 
@@ -103,7 +106,6 @@ span.love {
     line-height: 40px;
     
 }
-
 
 
 ul.social-buttons {

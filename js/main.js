@@ -16,8 +16,9 @@ $(document).ready(function(){
 
     canvassetup();
 
+
     //render the buffered canvas onto the original canvas element
-        for(var i = 0; i < 100; i++) {
+        for(var i = 0; i < 65; i++) {
             pxs[i] = new Circle();
             pxs[i].reset();
         }
@@ -33,6 +34,8 @@ function canvassetup(){
     WIDTH=Math.max(1,window.innerWidth);
     HEIGHT=Math.max(1,window.innerHeight);
     canvas = document.getElementById('pixie'); //790
+    canvas.width=WIDTH;
+    canvas.height=HEIGHT;
     con=canvas.getContext('2d');
     // buffer canvas
     firstCanvas = document.createElement('canvas');
@@ -61,7 +64,7 @@ function draw() {
 //draw();
 
 function Circle() {
-    this.settings = {time_to_live:500, x_maxspeed:5, y_maxspeed:2, radius_max:10, rt:1, x_origin:960, y_origin:540, random:true, blink:true};
+    this.settings = {time_to_live:500, x_maxspeed:5, y_maxspeed:2, radius_max:12, rt:1, x_origin:960, y_origin:540, random:true, blink:true};
 
 
     // this generates each individual bubble
