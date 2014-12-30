@@ -2,6 +2,10 @@
 /* yo this is edgar here
 waddup */
 
+@media only screen and (max-device-width: 480px) {
+/* define mobile specific styles come here */
+overflow: scroll;
+}
 
 * {
 	margin: 0;
