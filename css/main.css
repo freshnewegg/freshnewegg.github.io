@@ -1,7 +1,7 @@
 
 /* yo this is edgar here
 waddup */
-@media (max-width: @screen-xs) {
+@media all and (max-width: 480px) {
     h1{font-size: 12px;}
     h2{font-size: 10px;}
 }
