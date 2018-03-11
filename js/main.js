@@ -18,7 +18,7 @@ $(document).ready(function(){
 
 
     //render the buffered canvas onto the original canvas element
-        for(var i = 0; i < 65; i++) {
+        for(var i = 0; i < 75; i++) {
             pxs[i] = new Circle();
             pxs[i].reset();
         }
@@ -64,7 +64,7 @@ function draw() {
 //draw();
 
 function Circle() {
-    this.settings = {time_to_live:500, x_maxspeed:5, y_maxspeed:2, radius_max:12, rt:1, x_origin:960, y_origin:540, random:true, blink:true};
+    this.settings = {time_to_live:500, x_maxspeed:5, y_maxspeed:2, radius_max:36, rt:1, x_origin:960, y_origin:540, random:true, blink:true};
 
 
     // this generates each individual bubble
